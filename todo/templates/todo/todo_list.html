@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1> Things I need to do: </h1>
-    {{ items }}
-</body>
+  </head>
+  <body>
+    <h1>Things I need to do:</h1>
+    <table>
+        {% for item in items %}
+            <tr>
+            {% if item.done %}
+                <td><strike>{{ item.name }}</td></strike></td>
+            {% else %}
+                <td>{{ item.name }}</td>
+            {% endif %}
+            </tr>
+        {% empty %}
+            <tr><td><h2>You have nothing to do.<br>Go have a lemonade!</h2></td></tr>
+        {% endfor %}
+    </table>
+  </body>
 </html>
