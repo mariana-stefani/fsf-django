@@ -9,3 +9,7 @@ class TestItemForm(TestCase):
         self.assertFalse(form.is_valid())
         self.assertIn('name', form.errors.keys())
         self.assertEqual(form.error['name'][0], 'This field is required.')
+
+    def test_done_field_is_not_required(self):
+        form = ItemForm({'name': 'Test Todo Item'})
+        self.assertTrue(form.is_valid())
