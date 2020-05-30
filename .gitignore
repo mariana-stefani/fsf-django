@@ -2,3 +2,4 @@ Pipfile
 Pipfile.lock
 htmlcov
 .coverage
+.vscode
