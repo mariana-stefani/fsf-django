@@ -13,3 +13,7 @@ class TestItemForm(TestCase):
     def test_done_field_is_not_required(self):
         form = ItemForm({'name': 'Test Todo Item'})
         self.assertTrue(form.is_valid())
+
+    def test_fields_are_explicit_in_form_metaclass(self):
+        form = ItemForm()
+        self.assertEqual(form.Meta.fields, ['name', 'done'])
