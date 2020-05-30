@@ -16,10 +16,15 @@
                 <td>{{ item.name }}</td>
             {% endif %}
             <td>
-              <a href="/edit/{{ item.id }}">
-                <button>Edit</button>
+              <a href="/toggle/{{ item.id }}">
+                <button>Toggle</button>
               </a>
             </td>
+              <td>
+                <a href="/edit/{{ item.id }}">
+                  <button>Edit</button>
+                </a>
+              </td>
             </tr>
         {% empty %}
             <tr><td><h2>You have nothing to do.<br>Go have a lemonade!</h2></td></tr>
