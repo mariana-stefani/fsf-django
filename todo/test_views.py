@@ -19,3 +19,7 @@ class TestViews(TestCase):
         response = self.client.get(f'/edit/{item.id}')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'todo/edit_item.html')
+
+    def test_can_add_item(self):
+        response = self.client.post('/add', {'name': 'Test Added Item'})
+        self.assertRedirects(response, '/')
