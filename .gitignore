@@ -3,3 +3,5 @@ Pipfile.lock
 htmlcov
 .coverage
 .vscode
+*.sqlite3
+__pycache__/
